@@ -1,7 +1,8 @@
 Pre-class 1 Exercises
 ---------------------
 
-The warm-up for class will use the mtcars dataset which is always present in R. The following code shows you how load the dataset
+The warm-up for class will use the mtcars dataset which is always
+present in R. The following code shows you how load the dataset
 
 ``` r
 library(pacman)
@@ -17,7 +18,10 @@ cars <- mtcars %>% rownames_to_column(var = "type") # tranform to tibble
 
 This a brief re-introduction to the tidyverse package in R
 
-This is something we went through during 1st semester so you should be able to do it, however if the summer have been to harsh I recommend consulting R for data science chapter 5: <https://r4ds.had.co.nz>
+This is something we went through during 1st semester so you should be
+able to do it, however if the summer have been to harsh I recommend
+consulting R for data science chapter 5:
+<a href="https://r4ds.had.co.nz" class="uri">https://r4ds.had.co.nz</a>
 
 ``` r
 # Using mutate - convert miles per gallon to liters
@@ -81,4 +85,7 @@ barplot(cars$gear, cars$mpg)
 
 ``` r
 #create some sort of plot plotting the data
+
+
+#Stine was here
 ```

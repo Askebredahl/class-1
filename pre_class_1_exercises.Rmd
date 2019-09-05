@@ -64,6 +64,9 @@ barplot(cars$gear, cars$mpg)
 
 
 #create some sort of plot plotting the data
+
+
+#Stine was here
 ```
 
 
