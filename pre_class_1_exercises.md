@@ -1,40 +1,40 @@
----
-title: "pre_class_1_exercises"
-author: "Aske Bredahl"
-date: "7/7/2019"
-output:   
-  md_document:
-    variant: markdown_github
----
+Pre-class 1 Exercises
+---------------------
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+The warm-up for class will use the mtcars dataset which is always present in R. The following code shows you how load the dataset
 
-## Pre-class 1 Exercises
-
-The warm-up for class will use the mtcars dataset which is always present in R.
-The following code shows you how load the dataset
-
-```{r load the data}
+``` r
 library(pacman)
 pacman::p_load(pacman, tidyverse) #laod packages
 ? mtcars # what are the variables
+```
+
+    ## starting httpd help server ... done
+
+``` r
 cars <- mtcars %>% rownames_to_column(var = "type") # tranform to tibble
 ```
 
-
 This a brief re-introduction to the tidyverse package in R
 
-This is something we went through during 1st semester so you should be able to do it, however if the summer have been to harsh I recommend consulting R for data science chapter 5: https://r4ds.had.co.nz
-```{r}
+This is something we went through during 1st semester so you should be able to do it, however if the summer have been to harsh I recommend consulting R for data science chapter 5: <https://r4ds.had.co.nz>
+
+``` r
 # Using mutate - convert miles per gallon to liters
 cars <- mutate(cars, cars$mpg/3.7854)
 
 # Using filter - find all the cars which have more that 4 gears and are automatic
 morethan4 <- filter(cars, cars$gear>4 & cars$am == 0)
 morethan4
+```
 
+    ##  [1] type            mpg             cyl             disp           
+    ##  [5] hp              drat            wt              qsec           
+    ##  [9] vs              am              gear            carb           
+    ## [13] cars$mpg/3.7854
+    ## <0 rows> (or 0-length row.names)
+
+``` r
 # Using select - create a column dataframe with only miles pr. gallon, weight and number og gears
 
 
@@ -51,19 +51,34 @@ mtcars %>%
   mutate(number = 200) %>% 
   summarise(sum_num = sum(number)) %>% 
   mutate(n_row = sum_num / 200)
+```
+
+    ##   sum_num n_row
+    ## 1    6400    32
+
+``` r
 # can be read as 'take mtcars, 
   # THEN add a column called numbers which is equal to 200
   # THEN the summarise the using the sum of numbers 
   # THEN divide the sum of the number by 200 to get the number of rows
 
 hist(cars$gear)
-qqplot(cars$gear, cars$mpg)
-barplot(cars$gear, cars$mpg)
-
-
-
-
-#create some sort of plot plotting the data
 ```
 
+![](pre_class_1_exercises_files/figure-markdown_github/unnamed-chunk-1-1.png)
 
+``` r
+qqplot(cars$gear, cars$mpg)
+```
+
+![](pre_class_1_exercises_files/figure-markdown_github/unnamed-chunk-1-2.png)
+
+``` r
+barplot(cars$gear, cars$mpg)
+```
+
+![](pre_class_1_exercises_files/figure-markdown_github/unnamed-chunk-1-3.png)
+
+``` r
+#create some sort of plot plotting the data
+```
